@@ -1,6 +1,6 @@
 function checkPassword() {
-    const password = document.getElementById("password").value;
-    const hash = "86804e909e48c8cf946046b9fe11bfe3884e136bb5c1e00c8a7e094317445a38"; // verifier le mdp en SHA-256
+    const password = document.getElementById("").value;
+    const hash = "89d564cbbf0e746adae0de0f29d53f96e6a1dc97560135996a847134cc4d9455"; // verifier le mdp en SHA-256
 
     async function sha256(message) {
         const msgBuffer = new TextEncoder().encode(message);
@@ -18,4 +18,5 @@ function checkPassword() {
             document.getElementById("message").innerText = "Mot de passe incorrect.";
         }
     });
+
 }
