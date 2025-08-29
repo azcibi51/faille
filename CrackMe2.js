@@ -1,5 +1,5 @@
 function checkPassword() {
-    const password = document.getElementById("").value;
+    const password = document.getElementById("password").value;
     const hash = "89d564cbbf0e746adae0de0f29d53f96e6a1dc97560135996a847134cc4d9455"; // verifier le mdp en SHA-256
 
     async function sha256(message) {
@@ -20,3 +20,4 @@ function checkPassword() {
     });
 
 }
+
