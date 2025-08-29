@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Mini XSS Lab - Sécu</title>
+  <link rel="shortcut icon" href="logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Lab XSS <span class="badge">Version sécurisée</span></h1>
+
+  <div class="card">
+    <p>Cette page montre une approche correcte : <strong>ne jamais injecter directement</strong> des données utilisateur dans <code>innerHTML</code>.</p>
+  </div>
+
+  <div class="card">
+    <h2>Saisissez votre nom</h2>
+    <form id="greetForm" method="GET" action="">
+      <input type="text" name="name" placeholder="Alice">
+      <button type="submit">Dire bonjour</button>
+    </form>
+    <div id="output" class="card"></div>
+  </div>
+
+
+  
+  
+
+
+  <div class="card">
+    <h2>Exemple de neutralisation</h2>
+    <pre>
+      <code style="text-align: left;">
+        // Bonne pratique (encode & utilise textContent)
+        function escapeHTML(str){
+          return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+        }
+        output.textContent = "Bonjour " + name + " !";
+      </code>
+    </pre>
+  </div>
+
+  <script>
+
+    function getParam(key){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(key) || "";
+    }
+
+    const output = document.getElementById("output");
+    const name = getParam("name");
+
+    // Version sécurisée : pas d'innerHTML, on passe par textContent
+    if(name){
+      output.textContent = "Bonjour " + name + " !";
+    } 
+    else{
+      output.textContent = "Entrez un nom puis validez.";
+    }
+    
+  </script>
+  
+</body>
+</html>
