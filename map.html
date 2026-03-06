@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Carte des Explorations - renardeaux</title>
+    <link rel="shortcut icon" href="logo2.png">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="map.css">
+    
+    <script src="statut.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="logo2.png" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li><a href="materiel.html">Matériel</a></li>
+                <li><b href="map.html">Carte</b></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="contacte.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="map-container">
+            <h2 style="text-align: center; margin-top: 20px;">Carte Interactive des Explorations</h2>
+            <p style="text-align: center; color: var(--text-light);">Retrouve les lieux de mes sessions d'urbex, escalade et parkour.</p>
+            
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://discord.gg/WNBzpjzqX" target="_blank">Discord</a>
+            <a href="https://instagram.com/renardeau73" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@renardeaux" target="_blank">YouTube</a>
+        </div>
+        <p>&copy; 2026 Renardeaux - Exploration & Tech</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script_map.js"></script>
+</body>
+</html>

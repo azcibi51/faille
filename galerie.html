@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Galerie Immersive - renardeaux</title>
+    <link rel="shortcut icon" href="logo2.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="galerie.css">
+    <script src="statut.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="logo2.png" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li><a href="map.html">Carte</a></li>
+                <li><a href="materiel.html">Matériel</a></li>
+                <li><b href="galerie.html">Galerie</b></li>
+                <li><a href="contacte.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-intro">
+            <h2>Visions d'Exploration</h2>
+            <p>Captures brutes de mes passages sur les toits et dans l'ombre.</p>
+        </section>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="photo1.jpg" alt="Urbex Usine">
+                <div class="overlay"><span>Voir en grand</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="Parkour_toit.jpg" alt="Parkour Toit">
+                <div class="overlay"><span>Voir en grand</span></div>
+            </div>
+            <div class="gallery-item " onclick="openLightbox(this)">
+                <img src="Verticalite.jpg" alt="Verticalité">
+                <div class="overlay"><span>Voir en grand</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="tunain.jpg" alt="Nuit Urbaine">
+                <div class="overlay"><span>Voir en grand</span></div>
+            </div>
+        </div>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+            <div id="caption"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Renardeaux - Galerie Visuelle</p>
+    </footer>
+
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            document.getElementById("lightbox").style.display = "flex";
+            document.getElementById("lightbox-img").src = img.src;
+            document.getElementById("caption").innerHTML = img.alt;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+</body>
+</html>
