@@ -219,4 +219,90 @@ footer {
     :root { --header-height: 220px; }
     body { padding-top: var(--header-height); }
     nav ul { gap: 8px; }
+
+}
+
+
+/* ==========================================================================
+   ADAPTATION MOBILE (Mobiles et Tablettes)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 120px; /* On réduit la taille du header sur mobile */
+    }
+
+    /* Ajustement du Header et Logo */
+    header {
+        padding: 10px;
+        flex-direction: column; /* On empile le logo et le menu */
+        height: var(--header-height);
+        justify-content: center;
+    }
+
+    .logo {
+        height: 50px; /* Logo plus petit */
+        margin-bottom: 10px;
+    }
+
+    /* Menu de navigation mobile */
+    nav ul {
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne si besoin */
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    nav ul li a, nav ul li b {
+        font-size: 0.9rem; /* Texte légèrement plus petit */
+        padding: 5px 8px;
+    }
+
+    /* Sections principales */
+    .hero h2 {
+        font-size: 1.5rem; /* Titre moins imposant */
+        padding: 0 10px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Grilles (Matériel, Galerie, Vidéos) */
+    .video-grid, .gear-grid, .gallery-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        padding: 10px;
+    }
+
+    /* Carte interactive */
+    #map {
+        height: 400px; /* On réduit la hauteur de la carte */
+        width: 100%;
+        border-radius: 0; /* Full width pour plus de confort */
+    }
+
+    /* Formulaire de contact */
+    form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    /* Footer */
+    .social-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+/* Ajustement pour les très petits écrans (iPhone SE, etc.) */
+@media (max-width: 480px) {
+    :root {
+        --header-height: 140px;
+    }
+    
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Grille de 3x2 pour les liens */
+        text-align: center;
+    }
 }
