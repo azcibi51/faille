@@ -37,3 +37,45 @@
     background: #cc0000;
     transform: scale(1.05);
 }
+
+
+
+/* ==========================================================================
+   ADAPTATION MOBILE POUR LA CARTE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    #map {
+        height: 450px;       /* Hauteur réduite pour voir le titre et le footer */
+        width: 100%;         /* Prend toute la largeur sur petit écran */
+        margin: 10px 0;      /* Moins de marge extérieure */
+        border-radius: 0;    /* On enlève l'arrondi pour un look "full-width" pro */
+        border-left: none;
+        border-right: none;
+    }
+
+    /* Ajustement des popups Leaflet pour les petits écrans */
+    .leaflet-popup-content {
+        width: 220px !important; /* On force une largeur fixe pour éviter les bugs */
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    .leaflet-popup-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    /* On agrandit un peu le bouton YT pour qu'il soit facile à cliquer avec le pouce */
+    .map-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Pour les très petits téléphones */
+@media (max-width: 480px) {
+    #map {
+        height: 350px; /* Encore plus petit pour garder le contrôle du scroll */
+    }
+}
